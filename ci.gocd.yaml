@@ -8,10 +8,7 @@ pipelines:
     stages:
       - build: # name of stage
           jobs:
-            build: # name of the job
-              tasks:
-               - exec: # indicates type of task
-                   command: make
+            build: *build_tasks
   "yaml-example": # definition of yaml-example pipeline
     group: yaml-example
     label_template: "${mygit[:8]}"
@@ -49,7 +46,4 @@ pipelines:
                    job: build
                    source: test-bin/
                    destination: bin/
-               - exec: # indicates type of task
-                   command: make
-                   arguments:
-                    - "VERBOSE=true"
+               - *build_tasks
