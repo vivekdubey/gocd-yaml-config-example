@@ -4,6 +4,7 @@ environments:
       EXAMPLE_DEPLOYMENT: testing
     pipelines:
       - yaml-example
+      - pci-web
 pipelines:
   yamlpipe1:
     group: simple
