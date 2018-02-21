@@ -1,4 +1,14 @@
-pipelines:
+common:
+  build_tasks: &build_tasks
+    - exec:
+        command: make
+        arguments:
+          - clean
+    - exec:
+        command: make
+        arguments:
+          - world
+ipelines:
   yamlpipe1:
     group: simple
     materials:
