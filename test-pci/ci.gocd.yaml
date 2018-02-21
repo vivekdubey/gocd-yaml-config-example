@@ -1,3 +1,13 @@
+common:
+  build_tasks: &build_tasks
+    - exec:
+        command: make
+        arguments:
+          - clean
+    - exec:
+        command: make
+        arguments:
+          - world
 pipelines:
   pci-web:
     group: simple
